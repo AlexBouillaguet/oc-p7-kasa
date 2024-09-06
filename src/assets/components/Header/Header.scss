@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+header {
+  @include margin-side;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 45px;
+
+  & img {
+    height: 68px;
+  }
+
+  & ul {
+    display: flex;
+    column-gap: 57px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
