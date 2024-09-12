@@ -2,6 +2,14 @@ body {
   background-color: $background-color;
   color: $text-color;
   font-size: 18px;
+  min-height: 100vh;
+}
+.page-container {
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 h1,

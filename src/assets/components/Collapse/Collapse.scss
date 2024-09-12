@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.collapse {
+  margin-bottom: 30px;
+
+  .collapse-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color;
+    color: $text-second-color;
+    border: none;
+    width: 100%;
+    height: 52px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 500;
+
+    .chevron {
+      transition: transform 0.5s ease;
+
+      &.rotate {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .collapse-content {
+    background-color: lighten($background-second-color, 2%);
+    padding: 15px;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
@@ -7,8 +8,8 @@ const Header = () => {
       <img src="\src\assets\images\.LOGO.png" alt="logo kasa" />
       <nav>
         <ul>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">A propos</a></li>
+          <li><NavLink to="/">Accueil</NavLink></li>
+          <li><NavLink to="/a-propos">A Propos</NavLink></li>
         </ul>
       </nav>
     </header>

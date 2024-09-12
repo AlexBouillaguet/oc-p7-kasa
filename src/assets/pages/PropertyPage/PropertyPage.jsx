@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react"
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer"
+import PropertyCarousel from "../../components/PropertyCarousel/PropertyCarousel"
 
 const PropertyPage = () => {
   return (
-    <div>
-      <h1>PropertyPage</h1>
-    </div>
-  );
+    <>
+      <div className="page-container">
+        <Header />
+        <PropertyCarousel />
+      </div>
+      <Footer />
+    </>
+  )
 }
 
-export default PropertyPage;
+export default PropertyPage

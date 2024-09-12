@@ -1,11 +1,19 @@
-import React from 'react';
+import React from "react"
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer"
+import ErrorComponent from "../../components/ErrorComponent/ErrorComponent"
+import "./Error404.scss"
 
 const Error404 = () => {
   return (
-    <div>
-      <h1>Error404</h1>
-    </div>
-  );
+    <>
+      <div className="page-container">
+        <Header />
+        <ErrorComponent />
+      </div>
+      <Footer />
+    </>
+  )
 }
 
-export default Error404;  
+export default Error404

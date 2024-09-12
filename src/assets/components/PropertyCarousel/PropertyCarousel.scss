@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.property-carousel {
+  margin-top: 50px;
+  margin-bottom: 200px;
+
+  img {
+    height: 415px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
