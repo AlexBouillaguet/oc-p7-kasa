@@ -21,7 +21,7 @@ const Collapse = ({ title, content }) => {
       </button>
       {isOpen && (
         <div className="collapse-content">
-          <p>{content}</p>
+          <span>{content}</span>
         </div>
       )}
     </div>

@@ -3,11 +3,40 @@
 
 .property-carousel {
   margin-top: 50px;
-  margin-bottom: 200px;
+  margin-bottom: 30px;
+  position: relative;
 
   img {
     height: 415px;
     width: 100%;
     object-fit: cover;
+  }
+
+  .chevrons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $text-second-color;
+    font-size: 90px;
+    padding: 25px;
+    border-radius: none;
+  }
+
+  .left-chevron {
+    left: 10px;
+  }
+
+  .right-chevron {
+    right: 10px;
+  }
+
+  .index-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $text-second-color;
+    font-size: 18px;
   }
 }

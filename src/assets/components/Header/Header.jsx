@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
   return (
     <header>
-      <img src="\src\assets\images\.LOGO.png" alt="logo kasa" />
+      <Link to="/"><img src="\src\assets\images\.LOGO.png" alt="logo kasa" /></Link>
       <nav>
         <ul>
           <li><NavLink to="/">Accueil</NavLink></li>

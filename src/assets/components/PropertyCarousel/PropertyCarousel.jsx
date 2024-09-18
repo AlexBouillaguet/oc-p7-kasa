@@ -1,30 +1,46 @@
-import React, { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import "./PropertyCarousel.scss"
+import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import "./PropertyCarousel.scss";
 
-const PropertyCarousel = () => {
-  const { id } = useParams()
-  const [property, setProperty] = useState(null)
+const PropertyCarousel = ({ property }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
-    fetch("/logements.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const PropertyId = data.find((item) => item.id === id)
-        setProperty(PropertyId)
-      })
-      .catch((error) =>
-        console.error("Erreur lors du chargement des données :", error)
-      )
-  }, [id])
+  const slidePrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? property.pictures.length - 1 : prevIndex - 1
+    );
+  };
 
-  if (!property) return <div>Chargement...</div>
+  const slideNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === property.pictures.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
     <div className="property-carousel">
-      <img src={property.pictures[0]} alt={property.title} />
+      <img
+        src={property.pictures[currentImageIndex]}
+        alt={`${property.title} - Image ${currentImageIndex + 1}`}
+      />
+      {property.pictures.length > 1 && (
+        <div onClick={slidePrevious} className="chevrons left-chevron">
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </div>
+      )}
+      {property.pictures.length > 1 && (
+        <div onClick={slideNext} className="chevrons right-chevron">
+          <FontAwesomeIcon icon={faChevronRight} />
+        </div>
+      )}
+      {property.pictures.length > 1 && (
+        <div className="index-indicator" tabIndex="-1">
+          {currentImageIndex + 1} / {property.pictures.length}
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default PropertyCarousel
+export default PropertyCarousel;

@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.collapse-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 31px;
+  gap: 76px;
+
+  .collapse {
+    width: 50%;
+
+    .collapse-title {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .collapse-content {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+}
