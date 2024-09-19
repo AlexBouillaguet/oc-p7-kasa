@@ -11,7 +11,7 @@ const Banner = ({ imageUrl, title }) => {
 
 Banner.propTypes = {
   imageUrl: PropTypes.string.isRequired,
-  title: PropTypes.string,
+  title: PropTypes.node,
 }
 
 export default Banner

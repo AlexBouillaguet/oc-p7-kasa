@@ -56,7 +56,7 @@ PropertyDescription.propTypes = {
     name: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
   }).isRequired,
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.string.isRequired,
 }
 
 export default PropertyDescription
