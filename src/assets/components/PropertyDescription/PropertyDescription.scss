@@ -16,9 +16,9 @@
       font-weight: 500;
       color: $primary-color;
       line-height: 25px;
-      width: 80%;
-
+      
       @include mobile-and-tablet {
+        width: 80%;
         font-size: 18px;
       }
     }
@@ -26,9 +26,10 @@
     p {
       font-size: 18px;
       font-weight: 500;
-      margin-top: 5px;
-
+      margin-top: 20px;
+      
       @include mobile-and-tablet {
+        margin-top: 5px;
         font-size: 14px;
       }
     }
