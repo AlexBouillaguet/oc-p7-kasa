@@ -1,5 +1,14 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .collapse-container {
   margin-top: 38px;
   padding-left: 108.5px;
   padding-right: 108.5px;
+
+  @include mobile-and-tablet {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 20px;
+  }
 }

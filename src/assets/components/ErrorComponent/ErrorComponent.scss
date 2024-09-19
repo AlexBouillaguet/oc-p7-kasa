@@ -12,6 +12,11 @@
     font-weight: 700;
     color: $primary-color;
     margin-top: 139px;
+
+    @include mobile-and-tablet {
+      font-size: 96px;
+      margin-top: 113px;
+    }
   }
 
   p {
@@ -20,6 +25,12 @@
     color: $primary-color;
     margin-top: 139px;
     text-align: center;
+
+    @include mobile-and-tablet {
+      font-size: 18px;
+      margin-top: 113px;
+      width: 80%;
+    }
   }
 
   a {
@@ -27,5 +38,11 @@
     margin-top: 139px;
     margin-bottom: 89px;
     text-decoration: underline;
+
+    @include mobile-and-tablet {
+      font-size: 14px;
+      margin-top: 113px;
+      margin-bottom: 86px;
+    }
   }
 }

@@ -6,10 +6,17 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-top: 45px;
-  
+
+  @include mobile-and-tablet {
+    margin-top: 20px;
+  }
 
   img {
     height: 68px;
+
+    @include mobile-and-tablet {
+      height: 47px;
+    }
   }
 
   ul {
@@ -18,17 +25,27 @@ header {
     font-size: 24px;
     font-weight: 500;
 
-    a{
+    @include mobile-and-tablet {
+      font-size: 12px;
+      column-gap: 26px;
+      text-transform: uppercase;
+    }
+
+    a {
       position: relative;
       &.active {
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
           left: 0;
           width: 100%;
           height: 2px;
           background-color: currentColor;
+
+          @include mobile-and-tablet {
+            height: 1px;
+          }
         }
       }
     }

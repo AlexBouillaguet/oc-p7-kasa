@@ -9,7 +9,11 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
+  @include mobile-and-tablet {
+    margin-top: 27px;
+  }
+
   & img {
     margin-top: 66px;
   }
@@ -18,5 +22,13 @@ footer {
     margin-top: 30px;
     font-size: 24px;
     font-weight: 400;
+
+    @include mobile-and-tablet {
+      font-size: 12px;
+      margin-top: 20px;
+      text-align: center;
+      width: 120px;
+      line-height: 20px;
+    }
   }
 }

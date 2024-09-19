@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import "./CardsContainer.scss"
 
@@ -15,21 +15,17 @@ const CardsContainer = () => {
 
   return (
     <div className="card-grid">
-      {properties.map(
-        (
-          property
-        ) => (
-          <Link to={`/logement/${property.id}`} key={property.id}>
-            <div key={property.id} className="card">
-              <img src={property.cover} alt={property.title} />
-              <div className="card-filter"></div>
-              <div className="card-content">
-                <h2>{property.title}</h2>
-              </div>
+      {properties.map((property) => (
+        <Link to={`/logement/${property.id}`} key={property.id}>
+          <div key={property.id} className="card">
+            <img src={property.cover} alt={property.title} />
+            <div className="card-filter"></div>
+            <div className="card-content">
+              <h2>{property.title}</h2>
             </div>
-          </Link>
-        )
-      )}
+          </div>
+        </Link>
+      ))}
     </div>
   )
 }

@@ -3,6 +3,15 @@
 
 .collapse {
   margin-bottom: 30px;
+  position: relative;
+
+  @include mobile-and-tablet {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   .collapse-title {
     display: flex;
@@ -15,12 +24,19 @@
     height: 52px;
     padding: 15px;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 24px;
     font-weight: 500;
+    position: relative;
+    z-index: 1;
+
+    @include mobile-and-tablet {
+      height: 30px;
+      font-size: 13px;
+    }
 
     .chevron {
       transition: transform 0.5s ease;
+      cursor: pointer;
 
       &.rotate {
         transform: rotate(-180deg);
@@ -29,7 +45,33 @@
   }
 
   .collapse-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
     background-color: lighten($background-second-color, 2%);
-    padding: 15px;
+    padding: 0 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transform: translateY(-30px);
+    opacity: 0;
+    position: relative;
+    z-index: 0;
+
+    &.open {
+      transform: translateY(-5px);
+      opacity: 1;
+      max-height: 1000px;
+    }
+
+    span {
+      display: block;
+      padding: 20px 0 15px 0;
+
+      @include mobile-and-tablet {
+        font-size: 12px;
+        padding: 15px 0 15px 0;
+        line-height: 16px;
+      }
+    }
   }
 }

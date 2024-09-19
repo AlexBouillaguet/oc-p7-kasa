@@ -6,10 +6,21 @@
   margin-bottom: 30px;
   position: relative;
 
+  @include mobile-and-tablet {
+    margin-top: 27px;
+    margin-bottom: 5px;
+  }
+
   img {
     height: 415px;
     width: 100%;
     object-fit: cover;
+    border-radius: 25px;
+
+    @include mobile-and-tablet {
+      height: 255px;
+      border-radius: 10px;
+    }
   }
 
   .chevrons {
@@ -21,6 +32,11 @@
     font-size: 90px;
     padding: 25px;
     border-radius: none;
+
+    @include mobile-and-tablet {
+      font-size: 24px;
+      padding: 0;
+    }
   }
 
   .left-chevron {
@@ -38,5 +54,9 @@
     transform: translateX(-50%);
     color: $text-second-color;
     font-size: 18px;
+
+    @include mobile-and-tablet {
+      display: none;
+    }
   }
 }

@@ -1,22 +1,26 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import "./PropertyCarousel.scss";
+import { useState } from "react"
+import PropTypes from "prop-types"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons"
+import "./PropertyCarousel.scss"
 
 const PropertyCarousel = ({ property }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const slidePrevious = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? property.pictures.length - 1 : prevIndex - 1
-    );
-  };
+    )
+  }
 
   const slideNext = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === property.pictures.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+    )
+  }
 
   return (
     <div className="property-carousel">
@@ -40,7 +44,14 @@ const PropertyCarousel = ({ property }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default PropertyCarousel;
+PropertyCarousel.propTypes = {
+  property: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+}
+
+export default PropertyCarousel

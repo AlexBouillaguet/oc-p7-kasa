@@ -4,26 +4,45 @@
 .property-wrapper {
   display: flex;
   justify-content: space-between;
-  
+
+  @include small-desktop {
+    flex-direction: column;
+    gap: 15px;
+  }
 
   .property-description {
     h1 {
       font-size: 36px;
       font-weight: 500;
       color: $primary-color;
+      line-height: 25px;
+      width: 80%;
+
+      @include mobile-and-tablet {
+        font-size: 18px;
+      }
     }
-  
+
     p {
       font-size: 18px;
       font-weight: 500;
       margin-top: 5px;
+
+      @include mobile-and-tablet {
+        font-size: 14px;
+      }
     }
-  
+
     .tags {
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
       margin-top: 20px;
-  
+
+      @include mobile-and-tablet {
+        margin-top: 10px;
+      }
+
       .tag {
         background-color: $primary-color;
         color: $text-second-color;
@@ -31,6 +50,12 @@
         font-weight: 600;
         padding: 5px 30px;
         border-radius: 10px;
+        white-space: nowrap;
+
+        @include mobile-and-tablet {
+          font-size: 10px;
+          border-radius: 5px;
+        }
       }
     }
   }
@@ -39,12 +64,16 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    
+
+    @include small-desktop {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     .host {
       display: flex;
       align-items: center;
-      
 
       .host-name {
         display: flex;
@@ -53,10 +82,19 @@
         margin-right: 10px;
         gap: 4px;
 
-        .first-name, .last-name {
+        @include mobile-and-tablet {
+          gap: 0;
+        }
+
+        .first-name,
+        .last-name {
           font-size: 18px;
           font-weight: 500;
           color: $primary-color;
+
+          @include mobile-and-tablet {
+            font-size: 12px;
+          }
         }
       }
 
@@ -64,14 +102,31 @@
         width: 64px;
         height: 64px;
         border-radius: 50%;
+
+        @include mobile-and-tablet {
+          width: 32px;
+          height: 32px;
+        }
       }
     }
     .rating {
       margin-top: 25px;
       font-size: 24px;
-      
+
+      @include small-desktop {
+        margin-top: 0;
+      }
+
+      @include mobile-and-tablet {
+        font-size: 13px;
+      }
       .star {
         margin-left: 10px;
+
+        @include small-desktop {
+          margin-left: 0;
+          margin-right: 5px;
+        }
       }
 
       .full {
@@ -79,7 +134,7 @@
       }
 
       .empty {
-        color: #E3E3E3;
+        color: #e3e3e3;
       }
     }
   }
