@@ -8,7 +8,7 @@ import "./assets/styles/App.scss"
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/a-propos" element={<About />} />

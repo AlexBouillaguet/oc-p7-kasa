@@ -6,7 +6,7 @@
   margin-bottom: 30px;
   position: relative;
 
-  @include mobile-and-tablet {
+  @include tablet {
     margin-top: 27px;
     margin-bottom: 5px;
   }
@@ -17,7 +17,7 @@
     object-fit: cover;
     border-radius: 25px;
 
-    @include mobile-and-tablet {
+    @include tablet {
       height: 255px;
       border-radius: 10px;
     }
@@ -33,9 +33,12 @@
     padding: 25px;
     border-radius: none;
 
-    @include mobile-and-tablet {
-      font-size: 24px;
+    @include tablet {
+      font-size: 50px;
       padding: 0;
+    }
+    @include mobile {
+      font-size: 24px;
     }
   }
 
@@ -55,7 +58,7 @@
     color: $text-second-color;
     font-size: 18px;
 
-    @include mobile-and-tablet {
+    @include tablet {
       display: none;
     }
   }

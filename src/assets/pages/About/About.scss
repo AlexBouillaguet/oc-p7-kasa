@@ -6,7 +6,7 @@
   padding-left: 108.5px;
   padding-right: 108.5px;
 
-  @include mobile-and-tablet {
+  @include tablet {
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 20px;

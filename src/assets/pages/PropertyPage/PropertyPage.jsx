@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import PropertyCarousel from "../../components/PropertyCarousel/PropertyCarousel"
 import PropertyDescription from "../../components/PropertyDescription/PropertyDescription"
-import { useParams, Navigate } from "react-router-dom"
 import Collapse from "../../components/Collapse/Collapse"
+import Error404 from "../Error404/Error404"
 import "./PropertyPage.scss"
 
 const PropertyPage = () => {
@@ -27,7 +28,7 @@ const PropertyPage = () => {
   }, [id])
 
   if (isLoading) return null
-  if (!property) return <Navigate to="*" />
+  if (!property) return <Error404 />
 
   return (
     <>

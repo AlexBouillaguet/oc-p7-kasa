@@ -7,14 +7,14 @@ header {
   align-items: center;
   margin-top: 45px;
 
-  @include mobile-and-tablet {
+  @include tablet {
     margin-top: 20px;
   }
 
   img {
     height: 68px;
 
-    @include mobile-and-tablet {
+    @include tablet {
       height: 47px;
     }
   }
@@ -25,10 +25,13 @@ header {
     font-size: 24px;
     font-weight: 500;
 
-    @include mobile-and-tablet {
-      font-size: 12px;
+    @include tablet {
+      font-size: 18px;
       column-gap: 26px;
       text-transform: uppercase;
+    }
+    @include mobile {
+      font-size: 12px;
     }
 
     a {
@@ -43,7 +46,7 @@ header {
           height: 2px;
           background-color: currentColor;
 
-          @include mobile-and-tablet {
+          @include mobile {
             height: 1px;
           }
         }

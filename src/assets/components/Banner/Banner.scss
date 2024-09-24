@@ -15,13 +15,17 @@
   border-radius: 25px;
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4);
 
-  @include mobile-and-tablet {
+  @include tablet {
     height: 111px;
     margin-top: 27px;
     border-radius: 10px;
     box-shadow: none;
-    justify-content: left;
+    justify-content: center;
     padding-left: 20px;
+    text-align: center;
+  }
+  @include mobile {
+    justify-content: left;
     text-align: left;
   }
 
@@ -36,7 +40,7 @@
     border-radius: 25px;
     z-index: 1;
 
-    @include mobile-and-tablet {
+    @include tablet {
       border-radius: 10px;
     }
   }
@@ -48,12 +52,17 @@
       -1px 1px 0 #000, 1px 4px 6px rgba(0, 0, 0, 0.7);
     z-index: 2;
 
-    @include mobile-and-tablet {
-      font-size: 24px;
+    @include tablet {
+      font-size: 30px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      gap: 8px;
+      align-items: center;
       text-shadow: none;
+    }
+    @include mobile {
+      font-size: 24px;
+      align-items: flex-start;
+      flex-direction: column;
     }
   }
 }
